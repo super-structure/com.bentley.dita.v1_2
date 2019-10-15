@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--             (C) Copyright OASIS Open 2005, 2010.              -->
+<!--             (C) Copyright IBM Corporation 2001, 2004.         -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+	<!-- Catalog for Dita XSDs -->
+	<!-- It includes both SYSTEM and URI catalog declerations.  
+       - The SYSTEM declarations are used by the Apache Catalog Resolver.
+       - The URI declarations are the proper declerations as per the OASIS Entity 
+       Resolution Committee.  They are included in case some entity resolves adhere
+       to the spec to resolve the location of the schemas.
+  -->
+	
+	<!-- 2013-03-19 JTC: Bentley specialization XSD mapping -->
+	<!-- ======================================================= -->
+	<!--               Bentley XSD Mapping                       -->
+	<!-- ======================================================= -->
+<!--	<nextCatalog catalog="catalog-Bentley-dita-xsds.xml"/>-->
+		
+	<!-- Bentley specialized domains -->
+	<system systemId="bentley_rhetoricDomain.xsd" uri="bentley_rhetoricDomain.xsd" xml:base="bentley/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_rhetoricDomain.xsd:1.2" uri="bentley_rhetoricDomain.xsd" xml:base="bentley/xsd/" />
+	
+	<uri name="bentley_rhetoricDomain.xsd" uri="bentley_rhetoricDomain.xsd" xml:base="bentley/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_rhetoricDomain.xsd:1.2" uri="bentley_rhetoricDomain.xsd" xml:base="bentley/xsd/" />
+	
+	<!-- 2016-05-13 JTC: The following XSDs are used to exclude MathML as it does not appear to function in LiveContent Create 2014 -->
+	<system systemId="bentley_mathDomain.xsd" uri="bentley_mathDomain.xsd" xml:base="bentley/xsd/" />
+	<!--<system systemId="bentley_mathDomain_NoMML.xsd" uri="bentley_mathDomain.xsd" xml:base="bentley/xsd/" />-->
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_mathDomain.xsd:1.2" uri="bentley_mathDomain.xsd" xml:base="bentley/xsd/" />
+	<!--<system systemId="urn:bentley:names:tc:dita:xsd:bentley_mathDomain.xsd" uri="bentley_mathDomain_NoMML.xsd" xml:base="bentley/xsd/" />-->
+	
+	<uri name="bentley_mathDomain.xsd" uri="bentley_mathDomain.xsd" xml:base="bentley/xsd/" />
+	<!--<uri name="bentley_mathDomain.xsd" uri="bentley_mathDomain_NoMML.xsd" xml:base="bentley/xsd/" />-->
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_mathDomain.xsd:1.2" uri="bentley_mathDomain.xsd" xml:base="bentley/xsd/" />
+	<!--<uri name="urn:bentley:names:tc:dita:xsd:bentley_mathDomain.xsd" uri="bentley_mathDomain_NoMML.xsd" xml:base="bentley/xsd/" />-->
+	
+	<!-- Bentley Highlighting domain constraint module -->
+	<system systemId="bentley_highlightDomain-c.xsd" uri="bentley_highlightDomain-c.xsd" xml:base="bentley/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_highlightDomain-c.xsd:1.2" uri="bentley_highlightDomain-c.xsd" xml:base="bentley/xsd/" />
+	
+	<uri name="bentley_highlightDomain-c.xsd" uri="bentley_highlightDomain-c.xsd" xml:base="bentley/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_highlightDomain-c.xsd:1.2" uri="bentley_highlightDomain-c.xsd" xml:base="bentley/xsd/" />
+	
+	
+	<!-- Document types and modules used by the Technical Content package -->
+	<system systemId="bentley_concept.xsd" uri="bentley_concept.xsd" xml:base="technicalContent/xsd/"/>
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_concept.xsd:1.2" uri="bentley_concept.xsd" xml:base="technicalContent/xsd/"/>
+	
+	<system systemId="bentley_topic.xsd" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_topic.xsd:1.2" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />	
+	
+	<system systemId="bentley_reference.xsd" uri="bentley_reference.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_reference.xsd:1.2" uri="bentley_reference.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_task.xsd" uri="bentley_task.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_task.xsd:1.2" uri="bentley_task.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_generalTask.xsd" uri="bentley_generalTask.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_generalTask.xsd:1.2" uri="bentley_generalTask.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_taskMod.xsd" uri="bentley_taskMod.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_taskMod.xsd:1.2" uri="bentley_taskMod.xsd" xml:base="technicalContent/xsd/" />
+	
+	
+	<system systemId="bentley_glossary.xsd" uri="bentley_glossary.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_glossary.xsd:1.2" uri="bentley_glossary.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_glossentry.xsd" uri="bentley_glossentry.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_glossentry.xsd:1.2" uri="bentley_glossentry.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_glossarygroup.xsd" uri="bentley_glossgroup.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_glossarygroup.xsd:1.2" uri="bentley_glossgroup.xsd" xml:base="technicalContent/xsd/" />	
+	
+	<system systemId="bentley_programmingDomain.xsd" uri="bentley_programmingDomain.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley-programmingDomain.xsd:1.2" uri="bentley_programmingDomain.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_uiDomain.xsd" uri="bentley_uiDomain.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_uiDomain.xsd:1.2" uri="bentley_uiDomain.xsd" xml:base="technicalContent/xsd/" />
+	
+	<!-- Topic for use in the technical content package -->
+	<system systemId="bentley_topic.xsd" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_topic.xsd:1.2" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />
+	
+	<!-- Map for use in the technical content package -->
+	<system systemId="bentley_map.xsd" uri="bentley_map.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_map.xsd:1.2" uri="bentley_map.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_ditabase.xsd" uri="bentley_ditabase.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_ditabase.xsd:1.2" uri="bentley_ditabase.xsd" xml:base="technicalContent/xsd/" />
+	
+	<system systemId="bentley_ditabaseMod.xsd" uri="bentley_ditabaseMod.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_ditabaseMod.xsd:1.2" uri="bentley_ditabaseMod.xsd" xml:base="technicalContent/xsd/" />
+	
+	<!-- Constraints in the technical content package -->
+	<system systemId="bentley_strictTaskbodyConstraintMod.xsd" uri="bentley_strictTaskbodyConstraintMod.xsd" xml:base="technicalContent/xsd/" />
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_strictTaskbodyConstraintMod.xsd:1.2" uri="bentley_strictTaskbodyConstraintMod.xsd" xml:base="technicalContent/xsd/" />	
+	
+	
+	<uri name="bentley_concept.xsd" uri="bentley_concept.xsd" xml:base="technicalContent/xsd/"/>
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_concept.xsd:1.2" uri="bentley_concept.xsd" xml:base="technicalContent/xsd/"/>
+	
+	<uri name="bentley_topic.xsd" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_topic.xsd:1.2" uri="bentley_topic.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_map.xsd" uri="bentley_map.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_map.xsd:1.2" uri="bentley_map.xsd" xml:base="technicalContent/xsd/" />
+	
+	
+	<uri name="bentley_reference.xsd" uri="bentley_reference.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_reference.xsd:1.2" uri="bentley_reference.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_task.xsd" uri="bentley_task.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_task.xsd:1.2" uri="bentley_task.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_generalTask.xsd" uri="bentley_generalTask.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_generalTask.xsd:1.2" uri="bentley_generalTask.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_taskMod.xsd" uri="bentley_taskMod.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_taskMod.xsd:1.2" uri="bentley_taskMod.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_strictTaskbodyConstraintMod.xsd" uri="bentley_strictTaskbodyConstraintMod.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_strictTaskbodyConstraintMod.xsd:1.2" uri="bentley_strictTaskbodyConstraintMod.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_glossary.xsd" uri="bentley_glossary.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_glossary.xsd" uri="bentley_glossary.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_glossentry.xsd" uri="bentley_glossentry.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_glossentry.xsd:1.2" uri="bentley_glossentry.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_glossarygroup.xsd" uri="bentley_glossgroup.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_glossarygroup.xsd:1.2" uri="bentley_glossgroup.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_programmingDomain.xsd" uri="bentley_programmingDomain.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_programmingDomain.xsd:1.2" uri="bentley_programmingDomain.xsd" xml:base="technicalContent/xsd/" />
+	
+	<uri name="bentley_uiDomain.xsd" uri="bentley_uiDomain.xsd" xml:base="technicalContent/xsd/" />
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_uiDomain.xsd:1.2" uri="bentley_uiDomain.xsd" xml:base="technicalContent/xsd/" />
+	
+
+	<!-- Bookmap document type -->
+	<system systemId="bentley_bookmap.xsd" uri="bentley_bookmap.xsd" xml:base="bookmap/xsd/"/>
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_bookmap.xsd:1.2" uri="bentley_bookmap.xsd" xml:base="bookmap/xsd/"/>
+	
+	<uri name="bentley_bookmap.xsd" uri="bentley_bookmap.xsd" xml:base="bookmap/xsd/"/>
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_bookmap.xsd:1.2" uri="bentley_bookmap.xsd" xml:base="bookmap/xsd/"/>
+		
+	<!--     MathML         -->
+	<system systemId="mathml3.xsd" uri="mathml3.xsd" xml:base="technicalContent/xsd/mathml3/xsd/"/>
+	<system systemId="urn:w3c:names:tc:mathml:xsd:mathml3.xsd" uri="mathml3.xsd" xml:base="technicalContent/xsd/mathml3/xsd/"/>
+	
+	<uri name="mathml3.xsd" uri="mathml3.xsd" xml:base="technicalContent/xsd/mathml3/xsd/"/>
+	<uri name="urn:w3c:names:tc:mathml:xsd:mathml3.xsd" uri="mathml3.xsd" xml:base="technicalContent/xsd/mathml3/xsd/"/>
+	
+	
+	<!-- Verification Specialization -->
+	<system systemId="bentley_verification.xsd" uri="bentley_verification.xsd" xml:base="verification/xsd/"/>
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_verification.xsd:1.2" uri="bentley_verification.xsd" xml:base="verification/xsd/"/>
+	
+	<uri name="bentley_verification.xsd" uri="bentley_verification.xsd" xml:base="verification/xsd/"/>
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_verification.xsd:1.2" uri="bentley_verification.xsd" xml:base="verification/xsd/"/>
+	
+	<!-- 2014-08-29 JTC: Added troubleshooting schemas adapted from DITA 1.3 -->
+	<system systemId="bentley_troubleshooting.xsd" uri="bentley_troubleshooting.xsd" xml:base="troubleshooting/xsd/"/>
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_troubleshooting.xsd:1.2" uri="bentley_troubleshooting.xsd" xml:base="troubleshooting/xsd/"/>
+	
+	<uri name="bentley_troubleshooting.xsd" uri="bentley_troubleshooting.xsd" xml:base="troubleshooting/xsd/"/>
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_troubleshooting.xsd:1.2" uri="bentley_troubleshooting.xsd" xml:base="troubleshooting/xsd/"/>
+	
+	<!-- 2014-09-03 JTC: Added FAQ specialization Bentley                  -->
+	<system systemId="bentley_faq.xsd" uri="bentley_faq.xsd" xml:base="faq/xsd/"/>
+	<system systemId="urn:bentley:names:tc:dita:xsd:bentley_faq.xsd:1.2" uri="bentley_faq.xsd" xml:base="faq/xsd/"/>
+	
+	<uri name="bentley_faq.xsd" uri="bentley_faq.xsd" xml:base="faq/xsd/"/>
+	<uri name="urn:bentley:names:tc:dita:xsd:bentley_faq.xsd:1.2" uri="bentley_faq.xsd" xml:base="faq/xsd/"/>
+
+</catalog>

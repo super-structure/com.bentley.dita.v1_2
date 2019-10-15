@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Rhetoric Domain Entities                     -->
+<!--  VERSION:   1.2                                               -->
+<!--  DATE:      November 2011                                     -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                    TYPICAL INVOCATION                         -->
+<!--                                                               -->
+<!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//BENTLEY//ENTITIES DITA Rhetoric Domain//EN"
+      Delivered as file "bentley_rhetoricDomain.ent"               -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the substitution context and domain     -->
+<!--             entity declarations for the Rhetoric Domain       -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             November 2011                                     -->
+<!--                                                               -->
+<!--             (C) Copyright Bentley Systems, Incorporated 2011. -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    ELEMENT EXTENSION ENTITY DECLARATIONS      -->
+<!-- ============================================================= -->
+
+<!ENTITY % rh-d-ph   	"em"	 									 >
+
+<!-- =============== End Element Extension Entity Declarations === -->
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATION                  -->
+<!-- ============================================================= -->
+
+
+<!ENTITY rh-d-att   "(topic rh-d)"									 >
+
+<!-- ================== End Rhetorical Domain Entities =========== -->

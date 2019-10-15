@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Math Domain Entities                         -->
+<!--  VERSION:   1.2                                               -->
+<!--  DATE:      January 2013                                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                    TYPICAL INVOCATION                         -->
+<!--                                                               -->
+<!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//BENTLEY//ENTITIES DITA Math Domain//EN"
+      Delivered as file "bentley_mathDomain.ent"                             -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the substitution context and domain     -->
+<!--             entity declarations for the Math Domain           -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             November 2011                                     -->
+<!--                                                               -->
+<!--             (C) Copyright Bentley Systems, Incorporated 2013. -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!-- 2015-01-14 JTC: removed 'sub' and 'sup' elements; highlight   -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    ELEMENT EXTENSION ENTITY DECLARATIONS      -->
+<!-- ============================================================= -->
+
+
+<!ENTITY % mt-d-fig		    "equation"								 >
+<!ENTITY % mt-d-foreign     "mathph | math"							 >
+<!ENTITY % mt-d-dl	        "eqsymbols"								 >
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATION                  -->
+<!-- ============================================================= -->
+
+
+<!ENTITY mt-d-att 	  "(topic mt-d)"								 >
+
+<!-- ================== End Math Domain Entities ================= -->

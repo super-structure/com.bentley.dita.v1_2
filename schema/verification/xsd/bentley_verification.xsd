@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Verification XSD                             -->
+<!--  VERSION:   1.1                                               -->
+<!--  DATE:      August 2018                                       -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    W3C XML Schema to describe DITA Tasks             -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             February 2014                                     -->
+<!--                                                               -->
+<!--    2014.02.17 JTC: Added Bentley custom domains, removed      -->
+<!--                    highlighting domain, Added Math domain     -->
+<!--                    & MathML 3                                 -->
+<!--    2018.08.03 JTC: Update verbody content model so references -->
+<!--                    may occur at beginning or end              -->
+<!-- ============================================================= -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <!-- ==================== Import Section ======================= -->
+  <xs:import namespace="http://dita.oasis-open.org/architecture/2005/"
+    schemaLocation="urn:oasis:names:tc:dita:xsd:ditaarch.xsd:1.2"/>
+
+  <!-- Add the domains to the base topic XML Schema -->
+  <!--  ================ TOPIC DOMAINS =====================  -->
+  <!-- Tech content domains -->
+  <xs:include schemaLocation="urn:bentley:names:tc:dita:xsd:bentley_uiDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:bentley:names:tc:dita:xsd:bentley_programmingDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:softwareDomain.xsd:1.2"/>
+
+  <!-- Base domains -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:highlightDomain.xsd:1.2"/>
+  <!-- 2014-02-17 JTC: Remove highlight domain -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:utilitiesDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:indexingDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:hazardstatementDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:abbreviateDomain.xsd:1.2"/>
+
+  <!-- 2013-01-04 JTC: Add rhetoric and math domains -->
+  <xs:include schemaLocation="urn:bentley:names:tc:dita:xsd:bentley_rhetoricDomain.xsd:1.2"/>
+  <xs:include schemaLocation="urn:bentley:names:tc:dita:xsd:bentley_mathDomain.xsd:1.2"/>
+
+  <!--  ================ GROUP DEFINITIONS =====================  -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclGrp.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclGrp.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:topicGrp.xsd:1.2"/>
+
+  <!-- =================  MODULE INLCUDE DEFINITION  ==================  -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementMod.xsd:1.2"/>
+  <!-- ======== Table elements ======== -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclMod.xsd:1.2"/>
+  <!-- ======= MetaData elements, plus keyword and indexterm ======= -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclMod.xsd:1.2"/>
+
+  <!-- == Add domain constraint to limit the elements from hightlight Domain == -->
+  <xs:include schemaLocation="urn:bentley:names:tc:dita:xsd:bentley_highlightDomain-c.xsd:1.2"/>
+
+  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementGrp.xsd:1.2">
+    <xs:group name="keyword">
+      <xs:choice>
+        <xs:group ref="keyword"/>
+        <xs:group ref="pr-d-keyword"/>
+        <xs:group ref="ui-d-keyword"/>
+        <xs:group ref="sw-d-keyword"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="ph">
+      <xs:choice>
+        <xs:group ref="ph"/>
+        <xs:group ref="pr-d-ph"/>
+        <xs:group ref="ui-d-ph"/>
+        <xs:group ref="hi-d-c-ph"/>
+        <xs:group ref="sw-d-ph"/>
+        <xs:group ref="rh-d-ph"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="pre">
+      <xs:choice>
+        <xs:group ref="pre"/>
+        <xs:group ref="pr-d-pre"/>
+        <xs:group ref="ui-d-pre"/>
+        <xs:group ref="sw-d-pre"/>
+      </xs:choice>
+    </xs:group>
+
+
+    <xs:group name="dl">
+      <xs:choice>
+        <xs:group ref="dl"/>
+        <xs:group ref="pr-d-dl"/>
+        <xs:group ref="mt-d-dl"/>
+      </xs:choice>
+    </xs:group>
+
+
+    <xs:group name="fig">
+      <xs:choice>
+        <xs:group ref="fig"/>
+        <xs:group ref="pr-d-fig"/>
+        <xs:group ref="ut-d-fig"/>
+        <xs:group ref="mt-d-fig"/>
+      </xs:choice>
+    </xs:group>
+
+
+    <xs:group name="foreign">
+      <xs:choice>
+        <xs:group ref="foreign"/>
+        <xs:group ref="mt-d-foreign"/>
+      </xs:choice>
+    </xs:group>
+
+
+    <xs:group name="figgroup">
+      <xs:choice>
+        <xs:group ref="figgroup"/>
+        <xs:group ref="pr-d-figgroup"/>
+      </xs:choice>
+    </xs:group>
+
+
+    <xs:group name="index-base">
+      <xs:choice>
+        <xs:group ref="index-base"/>
+        <xs:group ref="indexing-d-index-base"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="note">
+      <xs:choice>
+        <xs:group ref="note"/>
+        <xs:group ref="hazard-d-note"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="term">
+      <xs:choice>
+        <xs:group ref="term"/>
+        <xs:group ref="abbrev-d-term"/>
+      </xs:choice>
+    </xs:group>
+
+  </xs:redefine>
+
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:topicMod.xsd:1.2"/>
+
+  <!--  ================ INFO-TYPES DEFINITION =====================  -->
+  <xs:group name="info-types">
+    <xs:sequence/>
+  </xs:group>
+
+  <!--  ================ DOMAINS ATTRIBUTE DEFINITION =====================  -->
+
+  <xs:attributeGroup name="domains-att">
+    <xs:attribute name="domains" type="xs:string"
+      default="(topic abbrev-d)
+               (topic hazard-d)
+               (topic indexing-d)
+               (topic pr-d)
+               (topic sw-d)
+               (topic ui-d)
+               (topic ut-d)
+               (topic mathHighlight-c)
+               (topic rh-d)
+               (topic mt-d)
+               "
+    />
+  </xs:attributeGroup>
+
+  <!--  ============= GROUP DEFINITIONS (Cont.) ==================  -->
+  <xs:group name="verification-info-types">
+    <xs:choice>
+      <xs:group ref="verification"/>
+      <xs:group ref="info-types"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:group name="verification">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="verification"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="verbody">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="verbody"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="verbodydiv">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="verbodydiv"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="reference">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="reference"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="problem">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="problem"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="calcs">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="calcs"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="comparison">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="comparison"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="input">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="input"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="output">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="output"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <!--                    LONG NAME: Verification Type		           -->
+  <xs:element name="verification">
+    <xs:annotation>
+      <xs:documentation>
+        The &lt;<keyword>verification</keyword>&gt; is the top level DITA element for the Troublehsooting info type. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="verification.class">
+          <xs:attribute ref="class" default="- topic/topic verification/verification "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="verification.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="verification.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="verification.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="verification.content">
+    <xs:sequence>
+      <xs:sequence>
+        <xs:group ref="title"/>
+        <xs:group ref="titlealts" minOccurs="0"/>
+        <xs:choice minOccurs="0">
+          <xs:group ref="shortdesc"/>
+          <xs:group ref="abstract"/>
+        </xs:choice>
+        <xs:group ref="prolog" minOccurs="0"/>
+        <xs:group ref="verbody" minOccurs="0"/>
+        <xs:group ref="related-links" minOccurs="0"/>
+        <xs:group ref="verification-info-types" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="verification.attributes">
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+
+    <xs:attributeGroup ref="conref-atts"/>
+    <xs:attribute ref="ditaarch:DITAArchVersion"/>
+    <xs:attributeGroup ref="domains-att"/>
+    <xs:attributeGroup ref="select-atts"/>
+    <xs:attributeGroup ref="localization-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <!--<xs:attributeGroup ref="ish-root-element-atts"/>-->
+  </xs:attributeGroup>
+
+  <!--                    LONG NAME: Verification Body			           -->
+  <xs:element name="verbody">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>verbody</keyword>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="verbody.class">
+          <xs:attribute ref="class" default="- topic/body verification/verbody "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="verbody.class">
+    <xs:sequence>
+      <xs:group ref="verbody.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="verbody.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="verbody.content">
+    <xs:choice>
+      <xs:sequence>
+        <xs:group ref="reference"/>
+        <xs:group ref="problem"/>
+        <xs:group ref="calcs"/>
+        <xs:group ref="comparison"/>
+        <xs:group ref="input"/>
+        <xs:group ref="output"/>
+      </xs:sequence>
+      <xs:sequence>
+        <xs:group ref="problem"/>
+        <xs:group ref="calcs"/>
+        <xs:group ref="comparison"/>
+        <xs:group ref="input"/>
+        <xs:group ref="output"/>
+        <xs:group ref="reference"/>
+      </xs:sequence>
+    </xs:choice>
+  </xs:group>
+
+  <xs:attributeGroup name="verbody.attributes">
+    <xs:attributeGroup ref="id-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+    <xs:attributeGroup ref="localization-atts"/>
+    <xs:attributeGroup ref="base-attribute-extensions"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+
+  <!--                    LONG NAME: Verification Body Div        -->
+  <xs:element name="verbodydiv">
+    <xs:annotation>
+      <xs:documentation> The &lt;<keyword>verbodydiv</keyword>&gt; element represents 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="verbodydiv.class">
+          <xs:attribute ref="class" default="- topic/bodydiv verification/verbodydiv "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="verbodydiv.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="verbodydiv.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="verbodydiv.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="verbodydiv.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <!--<xs:group ref="section.notitle.cnt" minOccurs="0"/>-->
+        <!--<xs:group ref="verbodydiv" minOccurs="0"/>-->
+        <xs:group ref="section" minOccurs="0"/>
+        <xs:group ref="example" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="verbodydiv.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+    <xs:attributeGroup ref="univ-atts"/>
+  </xs:attributeGroup>
+
+  <!--                   LONG NAME: References -->
+  <xs:element name="reference">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>reference</keyword>&gt; element
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="reference.class">
+          <xs:attribute ref="class" default="- topic/section verification/reference "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="reference.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="reference.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="reference.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="reference.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="reference.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+  </xs:attributeGroup>
+
+  <!--                   LONG NAME: Problem -->
+  <xs:element name="problem">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>problem</keyword>&gt; element
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="problem.class">
+          <xs:attribute ref="class" default="- topic/section verification/problem "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="problem.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="problem.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="problem.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="problem.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="problem.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+  </xs:attributeGroup>
+
+  <!--              LONG NAME: Calculations Container     -->
+  <xs:element name="calcs">
+    <xs:annotation>
+      <xs:documentation> The &lt;<keyword>tsSymptoms</keyword>&gt; element represents 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="calcs.class">
+          <xs:attribute ref="class" default="- topic/bodydiv verification/calcs "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="calcs.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="calcs.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="calcs.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="calcs.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.notitle.cnt" minOccurs="0"/>
+        <xs:group ref="verbodydiv" minOccurs="0"/>
+        <xs:group ref="section" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="calcs.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+   <!-- <xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+    <xs:attributeGroup ref="univ-atts"/>
+  </xs:attributeGroup>
+
+  <!--                   LONG NAME: Problem -->
+  <xs:element name="comparison">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>comparison</keyword>&gt; element
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="problem.class">
+          <xs:attribute ref="class" default="- topic/section verification/comparison "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="comparison.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="comparison.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="comparison.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="comparison.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="comparison.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+  </xs:attributeGroup>
+
+  <!--                   LONG NAME: Input Example -->
+  <xs:element name="input">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>input</keyword>&gt; element
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="input.class">
+          <xs:attribute ref="class" default="- topic/example verification/input "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="input.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="input.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="input.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="input.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="input.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+  </xs:attributeGroup>
+
+  <!--                   LONG NAME: Output Example -->
+  <xs:element name="output">
+    <xs:annotation>
+      <xs:documentation>The &lt;<keyword>output</keyword>&gt; element
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="input.class">
+          <xs:attribute ref="class" default="- topic/example verification/output "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="output.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="output.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="output.attributes"/>
+  </xs:complexType>
+
+  <xs:group name="output.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="section.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:attributeGroup name="output.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <!--<xs:attributeGroup ref="ishlabelxpath-general-default"/>
+    <xs:attributeGroup ref="ishlinkxpath-general-default"/>-->
+  </xs:attributeGroup>
+
+</xs:schema>

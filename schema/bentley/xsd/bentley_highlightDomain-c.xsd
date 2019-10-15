@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Highlight Domain                             -->
+<!--  VERSION:   1.2                                             -->
+<!--  DATE:      November 2009                                     -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Define elements and specialization attributes     -->
+<!--             for Highlight Domain                              -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             March 2001                                        -->
+<!--                                                               -->
+<!--             (C) Copyright OASIS-Open.org 2005, 2009            -->
+<!--             (C) Copyright IBM Corporation 2001, 2004.         -->
+<!--             All Rights Reserved.                              -->
+<!-- ============================================================= -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  
+    <xs:annotation>
+      <xs:appinfo>
+        <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic mathHighlight-c)</dita:domainsModule>
+      </xs:appinfo>
+      <xs:documentation>
+      
+      </xs:documentation>
+    </xs:annotation>
+
+  <!--<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:taskMod.xsd">-->
+    
+    <xs:group name="hi-d-c-ph">
+      <xs:choice>
+        <xs:element ref="sup" />
+        <xs:element ref="sub" />
+      </xs:choice>
+    </xs:group>
+  <!--</xs:redefine>-->
+  
+  
+
+</xs:schema>

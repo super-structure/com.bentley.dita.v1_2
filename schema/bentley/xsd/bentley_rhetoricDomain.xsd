@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Rhetoric Domain                              -->
+<!--  VERSION:   1.2                                               -->
+<!--  DATE:      January 2013                                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the elements and specialization         -->
+<!--             attributes for the Rhetoric Domain                -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             January 2013                                      -->
+<!--                                                               -->
+<!--             (C) Copyright Bentley Systems, Incorporated 2013. -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!-- ============================================================= -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  
+  <xs:annotation>
+    <xs:appinfo>
+      <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic rh-d)</dita:domainsModule>
+    </xs:appinfo>
+    <xs:documentation>
+      The rhetorical domain elements are used to convey rhetorical meaning.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:group name="rh-d-ph">
+    <xs:choice>
+      <xs:element ref="em"/>
+    </xs:choice>
+  </xs:group>
+
+ <xs:group name="em">
+   <xs:sequence>
+     <xs:choice>
+       <xs:element ref="em"/>
+     </xs:choice>
+   </xs:sequence>
+ </xs:group>
+
+ <!--                    LONG NAME: Emphasis                         -->
+<xs:element name="em">
+  <xs:annotation>
+    <xs:documentation>
+      The emphasis (&lt;em&gt;) element is used to give emphasis to its contents.
+    </xs:documentation>
+  </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="em.class">
+          <xs:attribute ref="class" default="+ topic/ph rh-d/em "/>          
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="em.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="em.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="em.attributes"/>
+  </xs:complexType>
+  
+  <xs:attributeGroup name="em.attributes">
+    <xs:attribute name="keyref" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+
+  <xs:group name="em.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="text" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>

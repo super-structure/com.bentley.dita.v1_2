@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Math Domain                                  -->
+<!--  VERSION:   1.3                                               -->
+<!--  DATE:      November 2015                                     -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the elements and specialization         -->
+<!--             attributes for the Math Domain                    -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             January 2013                                      -->
+<!--                                                               -->
+<!--             (C) Copyright Bentley Systems, Incorporated 2013. -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!--      2013-03-21 JTC: Updated to reference MathML3 XSD         -->
+<!--      2013-10-23 JTC: Corrected references to mml:math elem.   -->
+<!--      2015-11-17 JTC: Updated links to MathML3 XSD & elems     -->
+<!--                      consistent with DITA 1.3 MathML schema   -->
+<!--      2016-05-17 JTC: Add <cite> to <math> element structure   -->
+<!-- ============================================================= -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  
+  <!-- importing MathML document type -->
+  <!-- 2013-03-21 JTC: Use created URN for consisetency; file at ../../../../mathml/mathml3/xsd/mathml3.xsd -->
+  <!--<xs:import 
+    namespace="http://www.w3.org/1998/Math/MathML" 
+    schemaLocation="urn:w3c:names:tc:mathml:xsd:mathml3.xsd"/>-->
+  <!--<xs:import schemaLocation="../../../../mathml/mathml3/xsd/mathml3.xsd"
+    namespace="http://www.w3.org/1998/Math/MathML"/>-->
+  <!-- definition for the specialized wrapper  -->
+  
+  <xs:annotation>
+    <xs:appinfo>
+      <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic mt-d)</dita:domainsModule>
+    </xs:appinfo>
+    <xs:documentation>
+      The math domain elements are used to display mathematical content.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <!--<xs:group name="mt-d-ph">
+    <xs:choice>
+      <xs:element ref="sub"/>
+      <xs:element ref="sup"/>
+    </xs:choice>
+  </xs:group>-->
+  
+  <xs:group name="mt-d-fig">
+    <xs:choice>
+      <xs:element ref="equation"/>
+    </xs:choice>
+  </xs:group>
+  
+  <xs:group name="mt-d-foreign">
+    <xs:choice>
+      <xs:element ref="math"/>
+      <xs:element ref="mathph"/>
+    </xs:choice>
+  </xs:group>
+  
+  <xs:group name="mt-d-dl">
+    <xs:choice>
+      <xs:element ref="eqsymbols"/>
+    </xs:choice>
+  </xs:group>
+  
+  <xs:group name="mathph">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="mathph"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="equation">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="equation"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="math">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="math"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="eqsymbols">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="eqsymbols"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="eqsymbol">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="eqsymbol"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="symname">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="symname"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:group name="symdesc">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="symdesc"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+
+ <!-- the following two elements are taken from the DITA highlight
+domain -->
+ <!--<xs:group name="sub">
+   <xs:sequence>
+     <xs:choice>
+       <xs:element ref="sub"/>
+     </xs:choice>
+   </xs:sequence>
+ </xs:group>
+    
+ <xs:group name="sup">
+   <xs:sequence>
+     <xs:choice>
+       <xs:element ref="sup"/>
+     </xs:choice>
+   </xs:sequence>
+ </xs:group>-->
+
+  <!--                    LONG NAME: Math Phrase			           -->
+  <xs:element name="mathph">
+    <xs:annotation>
+      <xs:documentation>
+        The math phrase (&lt;mathph&gt;) element contains an inline section of math text or image. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="mathph.class">
+          <xs:attribute ref="class" default="+ topic/foreign mt-d/mathph "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="mathph.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="mathph.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="mathph.attributes"/>
+  </xs:complexType>
+  
+  <xs:group name="mathph.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <!--<xs:element xmlns:mml="http://www.w3.org/1998/Math/MathML" ref="mml:math"/>-->  <!-- JTC: pull for XSD for LC Create -->
+        <xs:group ref="image"/>
+        <xs:group ref="sub"/>
+        <xs:group ref="sup"/>
+        <xs:group ref="words.cnt"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:attributeGroup name="mathph.attributes">
+    <xs:attribute name="keyref" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="global-atts"/>
+    <xs:attributeGroup ref="univ-atts"/>
+  </xs:attributeGroup>
+
+  <!--                    LONG NAME: Math			                    -->
+  <xs:element name="math">
+    <xs:annotation>
+      <xs:documentation>
+        The math (&lt;math&gt;) element is a block or text or an image which represents an entire mathematical expression or equation. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="math.class">
+          <xs:attribute ref="class" default="+ topic/foreign mt-d/math "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="math.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="math.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="math.attributes"/>
+  </xs:complexType>
+  
+  <xs:group name="math.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <!--<xs:element xmlns:mml="http://www.w3.org/1998/Math/MathML" ref="mml:math"/>--> <!-- JTC: pull for XSD for LC Create -->
+        <xs:group ref="image"/>
+        <xs:group ref="sub"/>
+        <xs:group ref="sup"/>
+        <xs:group ref="words.cnt"/>
+        <xs:group ref="cite"/>
+        <!-- 2016-05-17 JTC: This doesn't techincally match the DTD; but effectiely captures the common usage -->
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:attributeGroup name="math.attributes">
+    <xs:attribute name="keyref" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="global-atts"/>
+    <xs:attributeGroup ref="univ-atts"/>
+  </xs:attributeGroup>
+
+  <!--                    LONG NAME: Equation 						-->  
+  <xs:element name="equation">
+    <xs:annotation>
+      <xs:documentation>
+        The equation (&lt;equation&gt;) element is a block or text or an image which represents an entire mathematical expression or equation. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="equation.class">
+          <xs:attribute ref="class" default="+ topic/fig mt-d/equation "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="equation.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="equation.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="equation.attributes"/>
+  </xs:complexType>
+  
+  <xs:group name="equation.content">
+    <xs:sequence>
+      <xs:group ref="title" minOccurs="0"/>
+      <xs:group ref="desc" minOccurs="0"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="math" minOccurs="0"/>
+        <xs:group ref="eqsymbols" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:attributeGroup name="equation.attributes">
+    <!-- xs:attribute name="keyref" type="xs:string"/ -->
+    <xs:attribute name="spectitle" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="display-atts"/>
+    <xs:attributeGroup ref="univ-atts"/>
+  </xs:attributeGroup>
+
+  <!--                    LONG NAME: Equation Symbol List            -->
+  <xs:element name="eqsymbols">
+    <xs:annotation>
+      <xs:documentation>
+        The equation symbols (&lt;eqsymbols&gt;) element contains a list of mathematical symbols and definitions used an equation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="eqsymbols.class">
+          <xs:attribute ref="class" default="+ topic/dl mt-d/eqsymbols "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="eqsymbols.class">
+    <xs:sequence>
+      <xs:group ref="eqsymbols.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="eqsymbols.attributes"/>
+  </xs:complexType>
+  <xs:group name="eqsymbols.content">
+    <xs:sequence>
+      <xs:group ref="eqsymbol" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:attributeGroup name="eqsymbols.attributes">
+    <xs:attribute name="compact" type="yesno-att.class"/>
+    <xs:attribute name="spectitle" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+  
+  <!--                    LONG NAME: Equation Symbol List Entry      -->
+  <xs:element name="eqsymbol">
+    <xs:annotation>
+      <xs:documentation>
+        The equation symbols entry (&lt;eqsymbol&gt;) element contains one or more mathematical symbol and definition pairs. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="eqsymbol.class">
+          <xs:attribute ref="class" default="+ topic/dlentry mt-d/eqsymbol "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="eqsymbol.class">
+    <xs:sequence>
+      <xs:group ref="eqsymbol.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="eqsymbol.attributes"/>
+  </xs:complexType>
+  
+  <xs:group name="eqsymbol.content">
+    <xs:sequence>
+      <xs:sequence>
+        <xs:group ref="symname" maxOccurs="unbounded"/>
+        <xs:group ref="symdesc" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:group>
+  <xs:attributeGroup name="eqsymbol.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+  
+  <!--                    LONG NAME: Symbol Name	                   -->
+  <xs:element name="symname">
+  <xs:annotation>
+    <xs:documentation>
+      A symbol name (&lt;symname&gt;) element contains a single mathematical symbol within a &lt;eqsymbols&gt; list.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType mixed="true">
+    <xs:complexContent mixed="true">
+      <xs:extension base="symname.class">
+        <xs:attribute ref="class" default="+ topic/dt mt-d/symname "/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  </xs:element>
+  <xs:complexType name="symname.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="symname.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="symname.attributes"/>
+  </xs:complexType>
+  <xs:group name="symname.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="term.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:attributeGroup name="symname.attributes">
+    <xs:attribute name="keyref" type="xs:string"/>
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+  <!--                    LONG NAME: Symbol Description              -->
+  <xs:element name="symdesc">
+    <xs:annotation>
+      <xs:documentation>
+        A symbol description (&lt;symdesc&gt;) element contains the description of the related mathematical symbol within a &lt;eqsymbols&gt; list. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent mixed="true">
+        <xs:extension base="symdesc.class">
+          <xs:attribute ref="class" default="+ topic/dd mt-d/symdesc "/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="symdesc.class" mixed="true">
+    <xs:sequence>
+      <xs:group ref="symdesc.content"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="symdesc.attributes"/>
+  </xs:complexType>
+  <xs:group name="symdesc.content">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="defn.cnt" minOccurs="0"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:attributeGroup name="symdesc.attributes">
+    <xs:attribute name="outputclass" type="xs:string"/>
+    <xs:attributeGroup ref="univ-atts"/>
+    <xs:attributeGroup ref="global-atts"/>
+  </xs:attributeGroup>
+
+    <!--                    LONG NAME: Superscript                     -->
+    <!--<xs:element name="sup">
+      <xs:annotation>
+        <xs:documentation>
+          The superscript (&lt;<keyword>sup</keyword>&gt;) element indicates that text should
+          be superscripted, or vertically raised in relationship to the surrounding
+          text.  Superscripts are usually a smaller font than the surrounding text.
+          This element is part of the Bentley DITA math domain.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+        <xs:complexContent>
+          <xs:extension base="sup.class">
+            <xs:attribute ref="class" default="+ topic/ph mt-d/sup "/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:element>
+    <xs:complexType name="sup.class" mixed="true">
+      <xs:sequence>
+        <xs:group ref="sup.content"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="sup.attributes"/>
+    </xs:complexType>
+    
+    <xs:group name="sup.content">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="basic.ph"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+    
+    <xs:attributeGroup name="sup.attributes">
+      <xs:attributeGroup ref="global-atts"/>
+      <xs:attributeGroup ref="univ-atts"/>
+      <xs:attribute name="outputclass" type="xs:string"/>
+    </xs:attributeGroup>-->
+    
+    <!--                    LONG NAME: Subscript                       -->
+    <!--<xs:element name="sub">
+      <xs:annotation>
+        <xs:documentation>
+          A subscript (&lt;<keyword>sub</keyword>&gt;) indicates that text should be subscripted,
+          or placed lower in relationship to the surrounding text.  Subscripted text
+          is often a smaller font than the surrounding text. Formatting may vary depending
+          on your output process. This element is part of the Bentley DITA math domain.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+        <xs:complexContent>
+          <xs:extension base="sub.class">
+            <xs:attribute ref="class" default="+ topic/ph mt-d/sub "/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:element>
+    <xs:complexType name="sub.class" mixed="true">
+      <xs:sequence>
+        <xs:group ref="sub.content"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="sub.attributes"/>
+    </xs:complexType>
+    
+    <xs:group name="sub.content">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="basic.ph"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+    
+    <xs:attributeGroup name="sub.attributes">
+      <xs:attributeGroup ref="global-atts"/>
+      <xs:attributeGroup ref="univ-atts"/>
+      <xs:attribute name="outputclass" type="xs:string"/>
+    </xs:attributeGroup>-->
+
+</xs:schema>

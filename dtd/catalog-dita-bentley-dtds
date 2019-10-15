@@ -1,0 +1,148 @@
+
+  -- ...................................................................... --
+  -- IN THIS OASIS XML CATALOG:                                             --
+  --   [G] XML Catalog data for BENTLEY customizations to OASIS DITA V1.2   --
+  --   [H] XML Catalog data for BENTLEY customizations to OASIS DITA        --
+  --            version-less DITA pointing to latest                        --
+  -- GENERAL NOTES:                                                         --
+  --   1. IBM DITA should be replaced with OASIS DITA as much as possible   --
+  --   2. OASIS DITA 1.2 is stated to be fully backward compatible with     --
+  --      OASIS DITA 1.1 & 1.0. All version-less public identifiers are     --
+  --      redirected to this latest version system file path. Note that     --
+  --      the regular publicId doesn't contain a version number.            --
+  --   3. OASIS DITA 1.0, 1.1 and 1.2 public identifiers containing a       --
+  --      version are added to allow explicit DTD usage.                    --
+  --   4. DITA Composite is disabled since it makes no sense from Trisoft   --
+  --      InfoShare perspective to group topics into one object/file.       --
+  --      20081201/DDM Activated for FI and Adobe FrameMaker 8.0 IAB        --
+  -- HISTORY:                                                               --
+  --   20070521/DDM Creation and case-sensitive verification of all         --
+  --     publicIds present in this catalog-dita.xml file.                   --
+  --   20070521/DDM Disabled composite ditabase and IBM BookMap.            --
+  --   20070807/DDM Rearranged the OASIS section into version 1.0, version  --
+  --     1.1 and version-less section.                                      --
+  --   20081201/DDM Activated ditabase OASIS DITA 1.1 PublicId              --
+  --   20090723/EL Added OASIS DITA 1.2 PublicId                            --
+  --   20130104/JTC Added Benltey DITA 1.2                                  --
+  -- ...................................................................... --
+  
+  -- ...................................................................... --  
+  --  [G] XML Catalog data for BENTLEY customizations to OASIS DITA V1.2    --
+  -- ...................................................................... --    
+
+  -- Document types and modules used by the Technical Content package --
+  
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Concept//EN" "bentley_concept.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Glossary Entry//EN" "bentley_glossentry.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Glossary//EN" "bentley_glossentry.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Glossary Group//EN" "bentley_glossgroup.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Reference//EN" "bentley_reference.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Task//EN" "bentley_task.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 General Task//EN" "bentley_generalTask.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Task//EN" "bentley_task.mod"
+    -- Topic for use in the technical content package --
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Topic//EN" "bentley_topic.dtd"
+    -- Map for use in the technical content package --
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Map//EN" "bentley_map.dtd"
+    -- Domains for the technical content package --
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Programming Domain//EN" "bentley_programmingDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 Programming Domain//EN" "bentley_programmingDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 User Interface Domain//EN" "bentley_uiDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 User Interface Domain//EN" "bentley_uiDomain.ent"
+    -- Constraints in the technical content package --
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Strict Taskbody Constraint//EN" "bentley_strictTaskbodyConstraint.mod"
+  
+  -- Bookmap document type and module --
+  PUBLIC "-//BENTLEY//DTD DITA 1.2 BookMap//EN" "bookmap/dtd/bentley_bookmap.dtd"
+  -- Custom Benltey Domains --
+  
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 Math Domain//EN" "bentley_mathDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Math Domain//EN" "bentley_mathDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 Rhetoric Domain//EN" "bentley_rhetoricDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Rhetoric Domain//EN" "bentley_rhetoricDomain.mod"
+  
+  -- Bentley Specialized Topic Types --
+  
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Troubleshooting//EN" "bentley_troubleshooting.dtd"  
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Troubleshooting//EN" "bentley_troubleshooting.dtd"  
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Troubleshooting//EN" "bentley_troubleshooting.mod"
+    
+  
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 Verification//EN" "bentley_verification.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 Verification//EN" "bentley_verification.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 Verification//EN" "bentley_verification.ent"  
+    
+  
+    PUBLIC "-//BENTLEY//DTD DITA 1.2 FAQ//EN" "bentley_faq.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA 1.2 FAQ//EN" "bentley_faq.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA 1.2 FAQ//EN" "bentley_faq.ent"
+  
+  
+  -- ...................................................................... --
+  -- End of XML Catalog data for BENTLEY customizations to OASIS DITA V1.2  --
+  -- ...................................................................... --
+  
+  -- ...................................................................... --
+  -- [H] XML Catalog data for BENTLEY version-less DITA pointing to latest .. -- 
+  -- ...................................................................... --    
+  
+  -- Document types and modules used by the Technical Content package --
+  
+    PUBLIC "-//BENTLEY//DTD DITA Concept//EN" "bentley_concept.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA Glossary Entry//EN" "bentley_glossentry.dtd" 
+    PUBLIC "-//BENTLEY//DTD DITA Glossary//EN" "bentley_glossentry.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA Glossary Group//EN" "bentley_glossgroup.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA Reference//EN" "bentley_reference.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA Task//EN" "bentley_task.dtd"
+    PUBLIC "-//BENTLEY//DTD DITA General Task//EN" "bentley_generalTask.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Task//EN" "bentley_task.mod"
+    -- Topic for use in the technical content package --
+    PUBLIC "-//BENTLEY//DTD DITA Topic//EN" "bentley_topic.dtd"
+    -- Map for use in the technical content package --
+    PUBLIC "-//BENTLEY//DTD DITA Map//EN" "bentley_map.dtd"
+    -- Domains for the technical content package --
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Programming Domain//EN" "bentley_programmingDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA Programming Domain//EN" "bentley_programmingDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA User Interface Domain//EN" "bentley_uiDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA User Interface Domain//EN" "bentley_uiDomain.ent"
+    -- Constraints in the technical content package --
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Strict Taskbody Constraint//EN" "bentley_strictTaskbodyConstraint.mod"
+  
+  -- Bookmap document type and module --
+  PUBLIC "-//BENTLEY//DTD DITA BookMap//EN" "bookmap/dtd/bentley_bookmap.dtd"
+  -- Custom Benltey Domains --
+  
+    PUBLIC "-//BENTLEY//ENTITIES DITA Math Domain//EN" "bentley_mathDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Math Domain//EN" "bentley_mathDomain.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA Rhetoric Domain//EN" "bentley_rhetoricDomain.ent"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Rhetoric Domain//EN" "bentley_rhetoricDomain.mod"
+  
+  -- Bentley Specialized Topic Types --
+  
+    PUBLIC "-//BENTLEY//DTD DITA Troubleshooting//EN" "bentley_troubleshooting.dtd"  
+    PUBLIC "-//BENTLEY//DTD DITA Troubleshooting//EN" "bentley_troubleshooting.dtd"  
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Troubleshooting//EN" "bentley_troubleshooting.mod"
+    
+  
+    PUBLIC "-//BENTLEY//DTD DITA Verification//EN" "bentley_verification.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA Verification//EN" "bentley_verification.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA Verification//EN" "bentley_verification.ent"  
+    
+  
+    PUBLIC "-//BENTLEY//DTD DITA FAQ//EN" "bentley_faq.dtd"
+    PUBLIC "-//BENTLEY//ELEMENTS DITA FAQ//EN" "bentley_faq.mod"
+    PUBLIC "-//BENTLEY//ENTITIES DITA FAQ//EN" "bentley_faq.ent"
+  
+  
+  -- ...................................................................... --
+  -- End of XML Catalog data for BENTLEY version-less DITA pointing to latest -- 
+  -- ...................................................................... --
+  
+  -- ...................................................................... --
+  --   [J] XML Catalog data for Specialized Bentley Content Types           --
+  -- ...................................................................... --    
+  
+
+  -- ...................................................................... --
+  -- End of XML Catalog data for Specialized Bentley Content Types          -- 
+  -- ...................................................................... --

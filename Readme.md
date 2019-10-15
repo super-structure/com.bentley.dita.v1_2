@@ -1,6 +1,6 @@
 ![Bentley logo](image/blogo.gif)
 # Bentley DITA V1.2 DocTypes
----
+
 2019-09-17
 
 This plug-in contains DTDs for backwards comparability for any DITA v1.2 topics or maps using Benltey's specializations. These are only shells and custom domains.

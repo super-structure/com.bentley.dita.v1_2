@@ -3,8 +3,8 @@
      Constraint Domain: Remove all elements from the 
      Highlight domain other than sub and sup.
      
-     Copyright (c) 2015  Bentley Systems, Incorporated
-     
+           Copyright (c) Bentley Systems, Incorporated.     
+           All rights reserved.                              
      ======================================                        -->
      
 

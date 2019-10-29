@@ -26,7 +26,8 @@ PUBLIC "-//BENTLEY//ELEMENTS DITA Strict Taskbody Constraint//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             April 2008                                        -->
 <!--                                                               -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2013. -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
 <!--             (C) Copyright OASIS Open 2008, 2009.              -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->

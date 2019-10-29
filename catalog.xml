@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Copyright (c) Bentley Systems, Incorporated. All rights reserved.
+
+-->
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
    <nextCatalog catalog="dtd/catalog-dita-bentley.xml"/>
    <nextCatalog catalog="schema/catalog-dita-xsds.xml"/>

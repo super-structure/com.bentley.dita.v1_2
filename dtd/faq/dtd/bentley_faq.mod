@@ -26,8 +26,9 @@ PUBLIC "-//BENTLEY//ELEMENTS DITA FAQ//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             February 2014                                     -->
 <!--                                                               -->
-<!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved. -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2014. -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
+<!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved.       -->
 <!--             (C) Copyright OASIS Open 2005, 2009.              -->
 <!--             (C) Copyright IBM Corporation 2001, 2004.         -->
 <!--             All Rights Reserved.                              -->

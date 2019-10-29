@@ -26,8 +26,8 @@ PUBLIC "-//BENTLEY//ELEMENTS DITA Rhetoric Domain//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             October 2011                                      -->
 <!--                                                               -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2011. -->
-<!--             All Rights Reserved.                              -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
 <!--                                                               -->
 <!--  UPDATES:                                                     -->
 <!-- ============================================================= -->

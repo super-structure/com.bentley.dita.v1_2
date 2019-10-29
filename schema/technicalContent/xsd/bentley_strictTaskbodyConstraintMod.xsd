@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!-- ============================================================= -->
+<!--  MODULE:    DITA Strict Taskbody Constraint                   -->
+<!--  VERSION:   1.2                                               -->
+<!--  DATE:      January 2013                                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the domain entity for the strict task   -->
+<!--             constraint module                                 -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             April 2008                                        -->
+<!--                                                               -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
+<!--             (C) Copyright OASIS Open 2008, 2009.              -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!--    2013.01.04 JTC: Created shell copy for Bentley             -->
+<!--                    specializations                            -->
+<!-- ============================================================= -->
+
 
 <xs:schema
   xmlns:xs="http://www.w3.org/2001/XMLSchema"

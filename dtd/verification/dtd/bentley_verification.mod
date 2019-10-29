@@ -26,7 +26,8 @@ PUBLIC "-//BENTLEY//ELEMENTS DITA Verification//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             February 2014                                     -->
 <!--                                                               -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2014. -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
 <!--             (C) Copyright OASIS Open 2005, 2009.              -->
 <!--             (C) Copyright IBM Corporation 2001, 2004.         -->
 <!--             All Rights Reserved.                              -->

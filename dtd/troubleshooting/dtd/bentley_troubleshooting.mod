@@ -26,6 +26,8 @@ PUBLIC "-//OASIS//ELEMENTS DITA Troubleshooting//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             November 2013                                     -->
 <!--                                                               -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
 <!--             (C) Copyright OASIS Open 2013.                    -->
 <!-- ============================================================= -->
 

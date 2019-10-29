@@ -3,7 +3,7 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Topic XSD                                    -->
-<!--  VERSION:   1.2                                             -->
+<!--  VERSION:   1.2                                               -->
 <!--  DATE:      March 2013                                        -->
 <!--                                                               -->
 <!-- ============================================================= -->
@@ -17,8 +17,9 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             March 2001                                        -->
 <!--                                                               -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2013. -->
-<!--             (C) Copyright OASIS-Open.org 2005, 2009                -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
+<!--             (C) Copyright OASIS-Open.org 2005, 2009           -->
 <!--             (C) Copyright IBM Corporation 2001, 2004.         -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->

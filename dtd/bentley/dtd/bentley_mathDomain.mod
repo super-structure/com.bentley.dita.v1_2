@@ -26,8 +26,8 @@ PUBLIC "-//BENTLEY//ELEMENTS DITA Math Domain//EN"
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             November 2011                                     -->
 <!--                                                               -->
-<!--             (C) Copyright Bentley Systems, Incorporated 2011. -->
-<!--             All Rights Reserved.                              -->
+<!--             Copyright (c) Bentley Systems, Incorporated.      -->
+<!--             All rights reserved.                              -->
 <!--                                                               -->
 <!--  UPDATES:                                                     -->
 <!-- 2012-04-23 JTC: changed mathph & math elements to foreign     -->
